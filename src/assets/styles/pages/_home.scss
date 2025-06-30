@@ -48,49 +48,15 @@ $ground-regular: "Ground";
   border: 0;
 }
 #homeContentContainer {
-  margin-top: 80px;
   width: 800px;
   height: 550px;
-  display: grid;
-  grid-template-columns: repeat(3, 255px);
-  grid-template-rows: 220px 50px 220px;
+
   gap: 20px;
   color: black;
   z-index: 2;
   box-sizing: content-box;
   position: relative;
 
-  .bentoCase {
-    border-radius: 15px;
-    background: rgba(20, 20, 20, 0.66);
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s, box-shadow 0.3s;
-    animation-name: floating;
-    animation-duration: 10s;
-    box-sizing: border-box;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-  }
-
-  #bentoNoCase {
-    grid-column: 1;
-    grid-row: 2;
-    display: flex;
-    justify-content: space-around;
-    .bentoCircle {
-      width: 50px;
-      height: 50px;
-      background-color: rgba(83, 82, 82, 0.449);
-      border-radius: 50px;
-      backdrop-filter: blur(7.5px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      .icon {
-        color: rgba(245, 245, 245, 0.349);
-      }
-    }
-  }
   #unsplashBentoCase {
     grid-column: 1;
     grid-row: 3;
@@ -242,22 +208,5 @@ $ground-regular: "Ground";
       transform: scale(0.9); /* Effet de pression */
       transition: transform 0.1s ease;
     }
-  }
-  #stackBentoCase {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-column: 3;
-    grid-row: 1;
-    svg {
-      stroke: whitesmoke;
-      fill: rgba(245, 245, 245, 0.751);
-      height: 80px;
-      width: 80px;
-    }
-  }
-  .bentoCase.expanded {
-    background: rgba(20, 20, 20, 0.66);
-    backdrop-filter: blur(30px);
   }
 }

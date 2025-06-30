@@ -91,3 +91,4 @@ export const Blobs = () => {
     </div>
   );
 };
+export default Blobs;

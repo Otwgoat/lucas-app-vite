@@ -2,10 +2,15 @@
   font-family: "Figtree";
   src: url("/fonts/Figtree-Regular.ttf");
 }
+@font-face {
+  font-family: "Figtree-semibold";
+  src: url("../../../../public/fonts/Figtree-SemiBold.ttf");
+}
 $figtree-regular: "Figtree";
+$figtree-semibold: "Figtree-semibold";
 header {
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 100;
@@ -13,53 +18,40 @@ header {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+
+  &.hidden {
+    transform: translateY(-100%);
+  }
+
+  &.scrolled {
+    background-color: rgba(0, 0, 0, 0.6); // fond semi-transparent
+    backdrop-filter: blur(6px); // effet de flou
+  }
   .navBar {
     width: 510px;
     display: flex;
     justify-content: center;
     height: 50px;
-
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
     ul {
-      width: 370px;
+      width: 100%;
       height: 100%;
-      list-style: none;
       display: flex;
+      justify-content: space-around;
       align-items: center;
-      padding: 0 2px;
-      justify-content: space-between;
-      background: rgba(20, 20, 20, 0.66);
-      backdrop-filter: blur(10px);
-      border-radius: 17px;
-      .activeFilter {
-        background-color: rgba(217, 217, 217, 0.174);
-
-        height: 90%;
-        border-radius: 15px;
-        content: "";
-        position: absolute;
-        bottom: 2;
-        transition: transform 0.3s ease-in-out;
-      }
-      li {
-        height: 46px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0 14px;
-      }
       .active {
         a {
           color: whitesmoke;
           transition: color 0.4 ease;
         }
       }
-
       a {
         text-decoration: none;
-        font-family: $figtree-regular;
+        font-family: $figtree-semibold;
         color: rgba(245, 245, 245, 0.563);
-        font-size: 16px;
-        font-weight: 300;
+        font-size: 18px;
         text-align: center;
       }
     }

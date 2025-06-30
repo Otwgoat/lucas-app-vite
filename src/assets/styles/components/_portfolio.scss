@@ -1,0 +1,115 @@
+$color-title-white: #e2e2e2;
+@font-face {
+  font-family: "Collidge Rounded";
+  src: url("../../../../public/fonts/CollidgePUA-Rounded.otf");
+}
+$collidge-rounded: "Collidge Rounded";
+#portfolioContentSection {
+  width: 1100px;
+  height: 90svh;
+  background-color: #21242e;
+  border-radius: 15px 15px 0 0;
+  z-index: 2;
+  position: relative;
+  margin-top: -15px;
+  background-color: #21242e;
+  box-shadow: #21242e 0px 5px 15px;
+  h2 {
+    color: $color-title-white;
+    font-size: 20px;
+    position: absolute;
+    margin-left: 10%;
+    top: 10%;
+  }
+  #portfolioContentContainer {
+    width: 1100px;
+    height: 100%;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+
+    .portfolioProjectsCards {
+      position: absolute;
+      left: 0;
+      top: 35%;
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 50px;
+      scroll-behavior: smooth;
+      max-width: 60%;
+      transform: (translateX(-20%));
+      min-height: 100%;
+      box-sizing: border-box;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      z-index: 160;
+      .portfolioProjectsCards::-webkit-scrollbar {
+        display: none;
+      }
+
+      .card {
+        pointer-events: auto;
+        min-width: 380px;
+        height: 280px;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px 0 #0000002d;
+        z-index: 160;
+      }
+    }
+    .portfolioDescriptionBody {
+      position: absolute;
+      right: calc(200px - 175px);
+      top: 35%;
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 280px;
+      gap: 10px;
+      margin-right: 50px;
+      z-index: 150;
+
+      h3 {
+        color: $color-title-white;
+      }
+      p {
+        color: $color-title-white;
+        width: 350px;
+        text-align: center;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    .portfolioProjectsBackground {
+      position: absolute;
+      right: 0;
+      bottom: -10%;
+      border-radius: 0 15px 0 0;
+      width: 650px;
+      min-height: 120%;
+      content: "";
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 140;
+    }
+    #projectsCounter {
+      position: absolute;
+      left: 15%;
+      bottom: 15%;
+      z-index: 160;
+      @media screen and (min-width: 1500px) {
+        bottom: 20%;
+      }
+      p {
+        color: #e2e2e2b5;
+        font-family: $collidge-rounded;
+        font-size: 16px;
+      }
+    }
+  }
+}
