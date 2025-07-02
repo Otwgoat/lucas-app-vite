@@ -3,7 +3,7 @@ import { useMediaQuery } from "react-responsive";
 
 export const About = () => {
   const containerId = "aboutContentSection";
-  const isMobile = useMediaQuery({ query: "(max-width: 700px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 1024px)" });
   const [seeMore, setSeeMore] = useState(false);
   return (
     <div className="pageContentSection" id={containerId}>
@@ -11,31 +11,27 @@ export const About = () => {
       <div className="content" id="aboutContentContainer">
         <div className="contentSection" id="contentDescription">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-            quisquam facilis, quidem ut sunt dolor? Vel nihil, eius modi omnis
-            commodi natus quae harum delectus inventore ipsam, quo eum
-            accusantium. Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Odit nisi quis natus alias! Rerum autem modi voluptas est
-            aliquam necessitatibus consequuntur, excepturi nisi ab sapiente.
-            Nisi aperiam id libero tempora. Corrupti a laborum dicta possimus? A
-            sit optio consectetur rem nulla ullam, quod et repellat iure. Nam
-            sint, aut laboriosam possimus, quisquam expedita sequi aliquid
-            obcaecati quis, maxime explicabo ex.
+            Après plusieurs années dans le commerce et la logistique, j’ai
+            découvert avec passion le monde du développement web et j’ai
+            entrepris une reconversion dans ce domaine. Ayant toujours été
+            attiré par l’informatique et les nouvelles technologies, j’ai adoré
+            apprendre et comprendre cet univers en constante évolution.
+            Aujourd’hui, j’essaye d’en faire mon métier, tout en prenant en
+            compte les enjeux de cette activité.
           </p>
           {isMobile && !seeMore ? null : (
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Praesentium laboriosam aspernatur illum repudiandae dignissimos
-              numquam deleniti, error beatae. Reprehenderit itaque impedit
-              provident deleniti magni assumenda totam, facilis sunt corporis
-              id. Quasi modi eligendi tempore dignissimos libero voluptatem
-              corrupti quam harum veniam expedita cum perferendis, quibusdam ab
-              temporibus quis consequuntur minima! Perferendis rerum repudiandae
-              blanditiis corporis nam? Natus praesentium doloremque quod! Ut
-              fugit quo voluptatem quibusdam pariatur placeat, facilis hic
-              suscipit ex est numquam odio corrupti repudiandae deserunt
-              exercitationem aut eum porro, inventore expedita maiores amet?
-              Voluptas cumque quo nam ex!
+              Je m’intéresse particulièrement aux approches comme
+              l’éco-conception, la performance des sites et l’accessibilité. Ce
+              qui me motive dans le développement web, c’est la possibilité de
+              répondre à des besoins concrets, qui facilitent la vie des
+              utilisateurs, de trouver des solutions techniques à des
+              problématiques variées et de continuer à apprendre sans cesse.
+              J’apprécie aussi la dimension créative de ce métier, qui permet
+              d’imaginer et de concevoir des interfaces uniques et adaptées à
+              chaque demande. Je souhaite évoluer dans un environnement
+              stimulant où je pourrai progresser, partager des idées et
+              contribuer à des projets porteurs de sens.
             </p>
           )}
           {isMobile ? (
