@@ -1,17 +1,14 @@
 import { useState } from "react";
 
 export const Navbar = () => {
-  const [isActive, setIsActive] = useState("homeTab");
-  const handleOnClick = (tabName) => {
-    setIsActive(tabName);
-  };
+  const [isActive] = useState("homeTab");
+
   return (
     <nav className="navBar">
       <ul>
         <li
           id="homeTab"
           className={isActive === "homeTab" ? "active" : ""}
-          onClick={() => handleOnClick("homeTab")}
           aria-selected={isActive === "homeTab"}
         >
           <a href="#">Accueil</a>
@@ -19,7 +16,6 @@ export const Navbar = () => {
         <li
           id="aboutTab"
           className={isActive === "aboutTab" ? "active" : ""}
-          onClick={() => handleOnClick("aboutTab")}
           aria-selected={isActive === "aboutTab"}
         >
           <a
@@ -35,7 +31,6 @@ export const Navbar = () => {
         <li
           id="portfolioTab"
           className={isActive === "portfolioTab" ? "active" : ""}
-          onClick={() => handleOnClick("portfolioTab")}
         >
           <a
             href="#"
@@ -52,7 +47,6 @@ export const Navbar = () => {
         <li
           id="contactTab"
           className={isActive === "contactTab" ? "active" : ""}
-          onClick={() => handleOnClick("contactTab")}
         >
           <a
             href="#"

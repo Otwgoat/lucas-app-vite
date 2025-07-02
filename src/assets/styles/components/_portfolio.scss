@@ -39,6 +39,7 @@
       scrollbar-width: none;
       -ms-overflow-style: none;
       z-index: 160;
+      user-select: none;
       .portfolioProjectsCards::-webkit-scrollbar {
         display: none;
       }
@@ -50,6 +51,7 @@
         border-radius: 15px;
         box-shadow: 0 4px 20px 0 #0000002d;
         z-index: 160;
+        user-select: none;
       }
     }
     .portfolioDescriptionBody {
@@ -61,7 +63,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-
+      user-select: none;
       margin-right: 50px;
       z-index: 150;
       #year {
