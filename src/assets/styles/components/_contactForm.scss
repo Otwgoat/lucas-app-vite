@@ -11,7 +11,9 @@ $figtree-semibold: "Figtree-semibold";
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  @media screen and (max-width: 1024px) {
+    width: 80%;
+  }
   label {
     color: $color-title-white;
     font-size: 16px;
@@ -41,21 +43,8 @@ $figtree-semibold: "Figtree-semibold";
     padding-left: 1rem;
     padding-top: 1rem;
   }
-  button {
-    font-size: 14px;
-    width: 200px;
-    height: 50px;
-    border-radius: 10px;
-    box-shadow: 0, 4px, 20px, #18a0fb60;
-    background-color: #4783c7;
-    border: none;
-    color: whitesmoke;
-    font-family: $figtree-semibold;
-    cursor: pointer;
-    font-size: 16px;
 
-    &.succeeded {
-      background-color: rgb(4, 145, 100);
-    }
+  .succeeded {
+    background-color: rgb(4, 145, 100);
   }
 }

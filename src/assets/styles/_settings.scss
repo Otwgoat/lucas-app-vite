@@ -8,6 +8,7 @@
 }
 $collidge-rounded: "Collidge Rounded";
 $figtree-semibold: "Figtree-semibold";
+$color-title-white: #e2e2e2;
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -144,10 +145,12 @@ body {
   max-width: 100svw;
   height: 100%;
   scroll-behavior: smooth;
+
   @media screen and (min-width: 1500px) {
     display: flex;
     justify-content: center;
   }
+
   .pageContainer {
     min-height: 100vh;
     width: 100%;
@@ -165,11 +168,33 @@ body {
       font-family: $collidge-rounded;
       text-transform: uppercase;
       letter-spacing: -5%;
+      color: $color-title-white;
     }
     p,
     label {
       font-family: $figtree-semibold;
       font-size: 16px;
+      color: $color-title-white;
+    }
+    #projectsCounter > p {
+      font-family: $collidge-rounded;
+    }
+    button {
+      width: 200px;
+      height: 45px;
+      border-radius: 10px;
+      box-shadow: 0, 4px, 20px, #18a0fb60;
+      background-color: #4783c7;
+      border: none;
+      color: whitesmoke;
+      font-family: $figtree-semibold;
+      cursor: pointer;
+      font-size: 16px;
+      a {
+        text-decoration: none;
+        color: whitesmoke;
+        font-family: $figtree-semibold;
+      }
     }
   }
 }

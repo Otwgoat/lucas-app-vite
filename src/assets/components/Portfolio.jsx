@@ -1,11 +1,13 @@
 import { useRef, useState } from "react";
 import portfolioData from "../../data/portfolioData.json";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
+import { PortfolioMobile } from "./PortfolioMobile";
 
 export const Portfolio = () => {
   const containerId = "portfolioContentSection";
   const [projectIndex, setProjectIndex] = useState(0);
-
+  const isMobile = useMediaQuery({ query: "(max-width: 1024px)" });
   const textRef = useRef(null);
   const backgroundRef = useRef(null);
   const cardOne = useRef(null);
@@ -52,93 +54,111 @@ export const Portfolio = () => {
   return (
     <div className="pageContentSection" id={containerId}>
       <h2>Portfolio</h2>
-      <div className="content" id="portfolioContentContainer">
-        <motion.div className="portfolioProjectsCards">
+      {isMobile ? (
+        <PortfolioMobile projects={projects} />
+      ) : (
+        <div className="content" id="portfolioContentContainer">
+          <motion.div className="portfolioProjectsCards">
+            <motion.div
+              ref={cardOne}
+              className="card"
+              style={{
+                backgroundImage: `url(${projects[projectIndex].imageLarge})`,
+                backgroundSize: "cover",
+              }}
+              drag={"x"}
+              dragConstraints={{ left: 0, right: 50, top: 0, bottom: 0 }}
+              onDrag={handleDrag}
+              onDragEnd={handleDragEnd}
+              key={`current-${projectIndex}`}
+              initial={{ x: "-50%" }}
+              animate={{ x: "0%" }}
+              exit={{ x: "-100%" }}
+              transition={{ duration: 0.6, type: "spring" }}
+            ></motion.div>
+
+            <motion.div
+              ref={cardTwo}
+              className="card"
+              style={{
+                backgroundImage: `url(${
+                  projects[(projectIndex + 1) % projects.length].imageLarge
+                })`,
+                backgroundSize: "cover",
+              }}
+              initial={{ x: "-50%" }}
+              animate={{ x: "0%" }}
+              key={`next-${projectIndex}`}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.7, type: "spring" }}
+            ></motion.div>
+          </motion.div>
+
           <motion.div
-            ref={cardOne}
-            className="card"
-            style={{
-              backgroundImage: `url(${projects[projectIndex].imageLarge})`,
-              backgroundSize: "cover",
-            }}
-            drag={"x"}
-            dragConstraints={{ left: 0, right: 50, top: 0, bottom: 0 }}
-            onDrag={handleDrag}
-            onDragEnd={handleDragEnd}
-            key={`current-${projectIndex}`}
-            initial={{ x: "-50%" }}
+            className="portfolioDescriptionBody"
+            ref={textRef}
+            key={projects[projectIndex].id}
+            layout
+            initial={{ x: "100%" }}
             animate={{ x: "0%" }}
             exit={{ x: "-100%" }}
-            transition={{ duration: 0.6, type: "spring" }}
-          ></motion.div>
+            transition={{
+              duration: 1,
+              ease: "easeIn",
+              type: "spring",
+              bounce: 0.3,
+            }}
+          >
+            <h3>{projects[projectIndex].title}</h3>
+            <p id="year">{projects[projectIndex].year}</p>
+            <div id="technoContainerLarge">
+              {projects[projectIndex].technologies.map((tech, index) => (
+                <p key={index}>{tech}</p>
+              ))}
+            </div>
+            <p id="projectDescription">{projects[projectIndex].description}</p>
+            {projects[projectIndex].url || projects[projectIndex].github ? (
+              <button>
+                {projects[projectIndex].url ? (
+                  <a href={projects[projectIndex].url}>Voir le site</a>
+                ) : (
+                  <a href={projects[projectIndex].github}>Voir le git</a>
+                )}
+              </button>
+            ) : null}
+          </motion.div>
 
           <motion.div
-            ref={cardTwo}
-            className="card"
+            className="portfolioProjectsBackground"
+            ref={backgroundRef}
+            key={projects[projectIndex].title}
             style={{
-              backgroundImage: `url(${
-                projects[(projectIndex + 1) % projects.length].imageLarge
-              })`,
-              backgroundSize: "cover",
+              backgroundImage: `url(${projects[projectIndex].imageLarge})`,
+              filter: `brightness(0.5)`,
+              backgroundPosition: `top`,
             }}
-            initial={{ x: "-50%" }}
-            animate={{ x: "0%" }}
-            key={`next-${projectIndex}`}
-            exit={{ x: "100%" }}
-            transition={{ duration: 0.7, type: "spring" }}
+            initial={{ y: "100%" }}
+            animate={{ y: "0%" }}
+            exit={{ y: "-100%" }}
+            transition={{
+              duration: 1,
+              ease: "easeIn",
+              type: "spring",
+              bounce: 0.3,
+            }}
           ></motion.div>
-        </motion.div>
-
-        <motion.div
-          className="portfolioDescriptionBody"
-          ref={textRef}
-          key={projects[projectIndex].id}
-          layout
-          initial={{ x: "100%" }}
-          animate={{ x: "0%" }}
-          exit={{ x: "-100%" }}
-          transition={{
-            duration: 1,
-            ease: "easeIn",
-            type: "spring",
-            bounce: 0.3,
-          }}
-        >
-          <h3>{projects[projectIndex].title}</h3>
-          <p>{projects[projectIndex].year}</p>
-          <p>{projects[projectIndex].description}</p>
-        </motion.div>
-
-        <motion.div
-          className="portfolioProjectsBackground"
-          ref={backgroundRef}
-          key={projects[projectIndex].title}
-          style={{
-            backgroundImage: `url(${projects[projectIndex].imageLarge})`,
-            filter: `brightness(0.5)`,
-            backgroundPosition: `top`,
-          }}
-          initial={{ y: "100%" }}
-          animate={{ y: "0%" }}
-          exit={{ y: "-100%" }}
-          transition={{
-            duration: 1,
-            ease: "easeIn",
-            type: "spring",
-            bounce: 0.3,
-          }}
-        ></motion.div>
-        <motion.div id="projectsCounter">
-          <p>
-            <span>
-              {projectIndex + 1 < 10
-                ? `0${projectIndex + 1}`
-                : projectIndex + 1}
-            </span>{" "}
-            / {projects.length < 10 ? `0${projects.length}` : projects.length}
-          </p>
-        </motion.div>
-      </div>
+          <motion.div id="projectsCounter">
+            <p>
+              <span>
+                {projectIndex + 1 < 10
+                  ? `0${projectIndex + 1}`
+                  : projectIndex + 1}
+              </span>{" "}
+              / {projects.length < 10 ? `0${projects.length}` : projects.length}
+            </p>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 };

@@ -7,12 +7,15 @@ import { Social } from "./assets/components/Social";
 import { Portfolio } from "./assets/components/Portfolio";
 import { Contact } from "./assets/components/Contact";
 import { Footer } from "./assets/components/Footer";
+import { useMediaQuery } from "react-responsive";
 
 function App() {
+  const isMobile = useMediaQuery({ query: "(max-width: 1024px)" });
   return (
     <>
       <Header />
-      <Social />
+      {!isMobile ? <Social /> : null}
+
       <div className="pageContainer" id="homePageContainer">
         <Blobs />
         <HeroBanner />

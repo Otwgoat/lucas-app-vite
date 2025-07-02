@@ -25,3 +25,19 @@ $color-title-white: #e2e2e2;
     top: 15%;
   }
 }
+@media screen and (max-width: 1024px) {
+  #contactContentSection {
+    width: 100%;
+    justify-content: center;
+    height: 80svh;
+    h2 {
+      margin: 0;
+      font-size: 18px;
+    }
+    #contactContentContainer {
+      position: relative;
+      top: 0;
+      margin-top: 45px;
+    }
+  }
+}

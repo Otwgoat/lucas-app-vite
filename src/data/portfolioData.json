@@ -7,7 +7,8 @@
     "description": "Ce projet est un défi de la plateforme front-end mentor. Le but était de reproduire à l'identique les maquettes fournies pour le challenge et de créer une application web présentant les activités d'une entreprise de tourisme spacial fictive. Il s'agit du premier projet en dehors du cadre de ma formation et a été conçu en utilisant NextJs.",
     "imageSmall": "public/images/spacetourism/spacetourismsmall.webp",
     "imageLarge": "public/images/spacetourism/spacetourismlarge.webp",
-    "url": "https://travel-to-space-front-challenge.netlify.app"
+    "url": "https://travel-to-space-front-challenge.netlify.app",
+    "github": ""
 },
 {
     "id": 2,
@@ -17,7 +18,8 @@
     "description": "Cette application est le résultat de mon projet d'évaluation en fin de formation. Elle présente de manière efficace, les activités du zoo Arcadia en mettant en avant les valeurs écologiques du parc et sert également d'outil de gestion aux équipes du parc.",
     "imageSmall": "public/images/arcadia/arcadiasmall.webp",
     "imageLarge": "public/images/arcadia/arcadialarge.webp",
-    "url": ""
+    "url": "",
+    "github": "https://github.com/Otwgoat/arcadia-webapp.git"
 }
 
 ]
