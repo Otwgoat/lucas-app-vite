@@ -27,6 +27,10 @@ const HeroBanner = () => {
               cursor: "pointer",
             }}
             whileHover="hover"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("contactContentSection").scrollIntoView();
+            }}
           >
             <motion.div
               style={{
