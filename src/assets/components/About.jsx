@@ -42,10 +42,7 @@ export const About = () => {
         </div>
         <div className="contentSection" id="heroContentSection">
           <div id="heroImgContainer">
-            <img
-              src="public/images/iconemap.png"
-              alt="Photo de Lucas Jouffroy"
-            />
+            <img src="/images/iconemap.png" alt="Photo de Lucas Jouffroy" />
           </div>
         </div>
       </div>
