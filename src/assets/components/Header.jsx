@@ -5,16 +5,25 @@ import { Navbar } from "./Navbar";
 
 export const Header = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 1024px)" });
-
   useEffect(() => {
-    const header = document.querySelector("header");
-    window.addEventListener("scroll", () => {
-      console.log("scroll");
-      header.classList.add("hidden");
-    });
-    window.addEventListener("scrollend", () => {
-      header.classList.remove("hidden");
-    });
+    if (!isMobile) {
+      const header = document.querySelector("header");
+      let scrollTimeout;
+
+      const onScroll = () => {
+        console.log("scroll");
+        header.classList.add("hidden");
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          header.classList.remove("hidden");
+        }, 150);
+      };
+      window.addEventListener("scroll", onScroll);
+      return () => {
+        window.removeEventListener("scroll", onScroll);
+        clearTimeout(scrollTimeout);
+      };
+    }
   }, []);
 
   return (

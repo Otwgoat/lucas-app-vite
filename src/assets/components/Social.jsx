@@ -9,7 +9,7 @@ export const Social = () => {
         </a>
       </button>
       <button>
-        <a href="https://github.com/Otwgoat">
+        <a href="https://github.com/lucasjouff">
           <GithubLogo size={30} color="#e2e2e2" weight="regular" />
         </a>
       </button>

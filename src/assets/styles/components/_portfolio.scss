@@ -123,7 +123,7 @@
 }
 @media screen and (max-width: 1024px) {
   #portfolioContentSection {
-    height: 95svh;
+    min-height: 100svh;
     width: 100%;
     margin-top: -15px;
     display: flex;
@@ -134,11 +134,12 @@
       margin-left: 0;
       top: 0;
       height: 10%;
-      margin-top: 45px;
+      display: flex;
+      align-items: center;
       position: relative;
     }
     #portfolioContentContainer {
-      height: 90%;
+      height: 90svh;
       width: 100%;
       border-radius: 0px;
       display: flex;
