@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Space tourism",
     "year": 2024,
-    "technologies": ["NextJs", "Sass"],
+    "technologies": ["nextjs", "sass"],
     "description": "Ce projet est un défi de la plateforme front-end mentor. Le but était de reproduire à l'identique les maquettes fournies pour le challenge et de créer une application web présentant les activités d'une entreprise de tourisme spacial fictive. Il s'agit du premier projet en dehors du cadre de ma formation qui a été conçu en utilisant NextJs.",
     "imageSmall": "images/spacetourism/spacetourismsmall.webp",
     "imageLarge": "images/spacetourism/spacetourismlarge.webp",
@@ -14,13 +14,26 @@
     "id": 2,
     "title": "Arcadia",
     "year": 2024,
-    "technologies": ["React", "Symphony" , "MySql", "Sass"],
+    "technologies": ["react", "symfony" , "mysql", "sass"],
     "description": "Cette application est le résultat de mon projet d'évaluation en fin de formation. Elle présente de manière efficace, les activités du zoo Arcadia en mettant en avant les valeurs écologiques du parc et sert également d'outil de gestion aux équipes du parc.",
     "imageSmall": "images/arcadia/arcadiasmall.webp",
     "imageLarge": "images/arcadia/arcadialarge.webp",
     "url": "",
     "github": "https://github.com/Otwgoat/arcadia-webapp.git"
+},
+{
+    "id": 3,
+    "title": "BlablaTrek",
+    "year": 2025,
+    "technologies": ["react", "symfony" , "mysql", "sass"],
+    "description": "Création d'une application communautaire autour du trekking, permettant l'annonce d'événements et la possibilité de participer à des activités en groupes.",
+    "imageSmall": "images/blablatrek/blablatrekhome.webp",
+    "imageLarge": "images/blablatrek/blablatrekhome.webp",
+    "url": "",
+    "github": "https://github.com/lucasjouff/blablatrek.git"
+
 }
+
 
 ]
 

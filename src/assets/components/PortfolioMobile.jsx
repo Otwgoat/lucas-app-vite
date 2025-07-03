@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import PropTypes from "prop-types";
+import { displayTech } from "../../utils/displayTech";
 
 export const PortfolioMobile = ({ projects }) => {
   const swiperRef = useRef(null);
@@ -27,7 +28,7 @@ export const PortfolioMobile = ({ projects }) => {
                   <p>{project.year}</p>
                   <div id="technoContainer">
                     {project.technologies.map((tech, index) => (
-                      <p key={index}>{tech}</p>
+                      <p key={index}>{displayTech(tech)}</p>
                     ))}
                   </div>
                   <p id="projectDescription">{project.description}</p>
@@ -36,7 +37,7 @@ export const PortfolioMobile = ({ projects }) => {
                       {project.url ? (
                         <a href={project.url}>Voir le site</a>
                       ) : (
-                        <a href={project.github}>Voir le git</a>
+                        <a href={project.github}>Voir le code</a>
                       )}
                     </button>
                   ) : null}

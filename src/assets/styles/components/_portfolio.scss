@@ -78,10 +78,16 @@
         gap: 10px;
         border-radius: 10px;
         p {
-          font-size: 12px;
-          width: auto;
+          width: 30px;
+          height: 30px;
           padding: 4px 10px;
           margin-top: 0;
+          display: flex;
+          align-items: center;
+        }
+        i {
+          font-size: 25px;
+          color: whitesmoke;
         }
       }
       p {
@@ -131,6 +137,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 15px;
     h2 {
       font-size: 18px;
       margin-left: 0;
@@ -184,11 +191,11 @@
             display: flex;
             width: 100%;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
             margin-top: 20px;
             p {
               color: #4783c7;
-              font-size: 12px;
+              font-size: 25px;
             }
           }
           #projectDescription {

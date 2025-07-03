@@ -3,6 +3,7 @@ import portfolioData from "../../data/portfolioData.json";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import { PortfolioMobile } from "./PortfolioMobile";
+import { displayTech } from "../../utils/displayTech";
 
 export const Portfolio = () => {
   const containerId = "portfolioContentSection";
@@ -113,7 +114,7 @@ export const Portfolio = () => {
             <p id="year">{projects[projectIndex].year}</p>
             <div id="technoContainerLarge">
               {projects[projectIndex].technologies.map((tech, index) => (
-                <p key={index}>{tech}</p>
+                <p key={index}>{displayTech(tech)}</p>
               ))}
             </div>
             <p id="projectDescription">{projects[projectIndex].description}</p>
@@ -122,7 +123,7 @@ export const Portfolio = () => {
                 {projects[projectIndex].url ? (
                   <a href={projects[projectIndex].url}>Voir le site</a>
                 ) : (
-                  <a href={projects[projectIndex].github}>Voir le git</a>
+                  <a href={projects[projectIndex].github}>Voir le code</a>
                 )}
               </button>
             ) : null}

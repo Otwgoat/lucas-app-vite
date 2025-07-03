@@ -1,10 +1,17 @@
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
-
+import portfolioData from "../../data/portfolioData.json";
+import { displayTech } from "../../utils/displayTech";
 export const About = () => {
   const containerId = "aboutContentSection";
   const isMobile = useMediaQuery({ query: "(max-width: 1024px)" });
   const [seeMore, setSeeMore] = useState(false);
+
+  const technologies = () => {
+    const allTechnos = portfolioData.flatMap((project) => project.technologies);
+    const uniqueTech = [...new Set(allTechnos)];
+    return uniqueTech;
+  };
   return (
     <div className="pageContentSection" id={containerId}>
       <h2>À propos</h2>
@@ -43,6 +50,20 @@ export const About = () => {
         <div className="contentSection" id="heroContentSection">
           <div id="heroImgContainer">
             <img src="/images/iconemap.png" alt="Photo de Lucas Jouffroy" />
+          </div>
+          <div id="heroStackContainer">
+            <div className="movingContainer">
+              <div className="movingGroup">
+                {technologies().map((tech, index) => (
+                  <p key={index}>{displayTech(tech)}</p>
+                ))}
+              </div>
+              <div className="movingGroup">
+                {technologies().map((tech, index) => (
+                  <p key={index}>{displayTech(tech)}</p>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
