@@ -20,19 +20,9 @@
     "imageLarge": "images/arcadia/arcadialarge.webp",
     "url": "",
     "github": "https://github.com/Otwgoat/arcadia-webapp.git"
-},
-{
-    "id": 3,
-    "title": "BlablaTrek",
-    "year": 2025,
-    "technologies": ["react", "symfony" , "mysql", "sass"],
-    "description": "Création d'une application communautaire autour du trekking, permettant l'annonce d'événements et la possibilité de participer à des activités en groupes.",
-    "imageSmall": "images/blablatrek/blablatrekhome.webp",
-    "imageLarge": "images/blablatrek/blablatrekhome.webp",
-    "url": "",
-    "github": "https://github.com/lucasjouff/blablatrek.git"
-
 }
+
+
 
 
 ]
